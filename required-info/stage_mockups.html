@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuyMyHouse.com — Stage Mockups</title>
+<style>
+  /* ── Base Reset ─────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f0f0f0;
+    color: #1a1a1a;
+    padding: 40px 20px;
+  }
+
+  /* ── Page Header ─────────────────────────────────────────── */
+  .page-header {
+    max-width: 960px;
+    margin: 0 auto 48px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #ccc;
+  }
+  .page-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1B2B4B;
+    margin-bottom: 6px;
+  }
+  .page-header p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+  }
+  .legend {
+    display: flex;
+    gap: 24px;
+    margin-top: 14px;
+    font-size: 13px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .swatch {
+    width: 16px; height: 16px; border-radius: 3px;
+  }
+  .swatch-inst { background: #1B2B4B; }
+  .swatch-term { background: #0d1117; border: 1px solid #30c96e; }
+
+  /* ── Stage Wrapper ─────────────────────────────────────────── */
+  .stage-section {
+    max-width: 960px;
+    margin: 0 auto 60px;
+  }
+  .stage-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .stage-badge {
+    background: #1B2B4B;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .stage-badge.terminal { background: #0d1117; color: #30c96e; border: 1px solid #30c96e; }
+  .stage-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1B2B4B;
+  }
+  .stage-note {
+    font-size: 12px;
+    color: #888;
+    margin-left: auto;
+    font-style: italic;
+  }
+
+  /* ── Browser Chrome Frame ─────────────────────────────────── */
+  .browser-frame {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  }
+  .browser-bar {
+    background: #e8e8e8;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .browser-dot {
+    width: 12px; height: 12px; border-radius: 50%;
+  }
+  .d-red   { background: #ff5f57; }
+  .d-amber { background: #ffbd2e; }
+  .d-green { background: #28c840; }
+  .browser-url {
+    flex: 1;
+    background: #fff;
+    border-radius: 5px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #555;
+    margin-left: 10px;
+    border: 1px solid #d0d0d0;
+  }
+
+  /* ── Annotation Callouts ─────────────────────────────────── */
+  .annotations {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .ann {
+    background: #fff8e1;
+    border-left: 3px solid #f0a500;
+    padding: 8px 12px;
+    border-radius: 0 4px 4px 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #555;
+  }
+  .ann strong { color: #b07800; display: block; margin-bottom: 2px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* ════════════════════════════════════════════════
+     STAGE 1 — Above the Fold (Institutional/Calm)
+  ════════════════════════════════════════════════ */
+  .s1-hero {
+    background: #1B2B4B;
+    padding: 64px 48px 56px;
+    text-align: center;
+  }
+  .s1-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8ab0d4;
+    margin-bottom: 18px;
+  }
+  .s1-headline {
+    font-size: 38px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    max-width: 640px;
+    margin: 0 auto 14px;
+  }
+  .s1-subhead {
+    font-size: 16px;
+    color: #b0c4d8;
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+  .s1-input-row {
+    display: flex;
+    gap: 0;
+    max-width: 560px;
+    margin: 0 auto;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .s1-input {
+    flex: 1;
+    background: #fff;
+    border: none;
+    padding: 18px 20px;
+    font-size: 15px;
+    color: #888;
+  }
+  .s1-cta {
+    background: #C8A96E;
+    color: #1B2B4B;
+    border: none;
+    padding: 18px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .s1-trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 28px;
+  }
+  .s1-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #7a9cbf;
+  }
+  .s1-trust-icon {
+    width: 16px; height: 16px;
+    background: #2d4a70;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: #8ab0d4;
+  }
+  .s1-nav {
+    background: #142038;
+    padding: 14px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .s1-logo {
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+  .s1-logo span { color: #C8A96E; }
+  .s1-nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 13px;
+    color: #8ab0d4;
+  }
+
+  /* ════════════════════════════════════════════════
+     STAGE 2 — Below the Fold (Social Proof)
+  ════════════════════════════════════════════════ */
+  .s2-body {
+    background: #fff;
+  }
+  .s2-stats {
+    background: #f8f9fc;
+    border-bottom: 1px solid #e8eaed;
+    padding: 32px 48px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+  .s2-stat-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1B2B4B;
+  }
+  .s2-stat-label {
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .s2-how {
+    padding: 40px 48px;
+  }
+  .s2-section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C8A96E;
+    margin-bottom: 12px;
+  }
+  .s2-section-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1B2B4B;
+    margin-bottom: 28px;
+  }
+  .s2-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .s2-step {
+    text-align: center;
+  }
+  .s2-step-num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #1B2B4B;
+    color: #C8A96E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    margin: 0 auto 12px;
+  }
+  .s2-step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1B2B4B;
+    margin-bottom: 6px;
+  }
+  .s2-step-desc {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+  }
+  .s2-testimonials {
+    background: #f8f9fc;
+    padding: 32px 48px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .s2-testi {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .s2-stars {
+    color: #C8A96E;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .s2-quote {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+  .s2-reviewer {
+    font-size: 11px;
+    color: #999;
+    font-weight: 600;
+  }
+  .s2-cta-bar {
+    background: #1B2B4B;
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .s2-cta-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .s2-cta-btn {
+    background: #C8A96E;
+    color: #1B2B4B;
+    padding: 14px 28px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* ════════════════════════════════════════════════
+     STAGE 3 — Terminal Interstitial (DARK MODE)
+  ════════════════════════════════════════════════ */
+  .s3-terminal {
+    background: #0d1117;
+    padding: 48px;
+    font-family: 'Courier New', 'Menlo', monospace;
+    min-height: 460px;
+  }
+  .s3-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .s3-logo-small {
+    font-size: 13px;
+    font-weight: 700;
+    color: #30c96e;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .s3-separator { color: #30c96e; opacity: 0.3; font-size: 20px; }
+  .s3-system-tag {
+    font-size: 11px;
+    color: #30c96e;
+    opacity: 0.6;
+  }
+  .s3-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .s3-line {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #30c96e;
+  }
+  .s3-line.dim { color: #1e5c34; }
+  .s3-line.bright { color: #5dff9f; font-weight: 600; }
+  .s3-line.addr { color: #7dd3fc; }
+  .s3-line.white { color: #e2e8f0; }
+  .s3-prompt { color: #30c96e; opacity: 0.5; }
+  .s3-progress-bar {
+    width: 100%;
+    height: 3px;
+    background: #1a2e1a;
+    border-radius: 2px;
+    margin: 18px 0;
+    overflow: hidden;
+  }
+  .s3-progress-fill {
+    height: 100%;
+    width: 72%;
+    background: linear-gradient(90deg, #30c96e, #5dff9f);
+    border-radius: 2px;
+  }
+  .s3-result-box {
+    margin-top: 24px;
+    border: 1px solid #30c96e;
+    border-radius: 4px;
+    padding: 20px 24px;
+  }
+  .s3-result-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #30c96e;
+    opacity: 0.6;
+    margin-bottom: 10px;
+  }
+  .s3-result-tier {
+    font-size: 22px;
+    font-weight: 700;
+    color: #5dff9f;
+    margin-bottom: 6px;
+  }
+  .s3-result-desc {
+    font-size: 12px;
+    color: #4a9e6a;
+    line-height: 1.5;
+  }
+  .s3-cursor {
+    display: inline-block;
+    width: 9px;
+    height: 14px;
+    background: #30c96e;
+    vertical-align: bottom;
+    margin-left: 2px;
+    opacity: 0.9;
+  }
+
+  /* ════════════════════════════════════════════════
+     STAGE 4 — Qualification Cards
+  ════════════════════════════════════════════════ */
+  .s4-body {
+    background: #fff;
+    padding: 48px;
+  }
+  .s4-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .s4-step-dot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .s4-step-dot.done  { background: #1B2B4B; color: #fff; }
+  .s4-step-dot.active{ background: #C8A96E; color: #1B2B4B; }
+  .s4-step-dot.todo  { background: #e8eaed; color: #999; }
+  .s4-step-line {
+    flex: 1; height: 2px;
+  }
+  .s4-step-line.done { background: #1B2B4B; }
+  .s4-step-line.todo { background: #e8eaed; }
+  .s4-question {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1B2B4B;
+    margin-bottom: 8px;
+    max-width: 520px;
+  }
+  .s4-sub {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 28px;
+  }
+  .s4-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    max-width: 560px;
+  }
+  .s4-card {
+    border: 2px solid #e8eaed;
+    border-radius: 10px;
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .s4-card.selected {
+    border-color: #1B2B4B;
+    background: #f0f4fa;
+  }
+  .s4-card-icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .s4-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1B2B4B;
+    margin-bottom: 4px;
+  }
+  .s4-card-desc {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.4;
+  }
+  .s4-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+    max-width: 560px;
+  }
+  .s4-back {
+    font-size: 13px;
+    color: #888;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .s4-next {
+    background: #1B2B4B;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* ════════════════════════════════════════════════
+     STAGE 5 — Identity Capture
+  ════════════════════════════════════════════════ */
+  .s5-body {
+    background: #fff;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .s5-left {}
+  .s5-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C8A96E;
+    margin-bottom: 12px;
+  }
+  .s5-heading {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1B2B4B;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+  .s5-body-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .s5-summary-box {
+    background: #f8f9fc;
+    border-radius: 8px;
+    padding: 16px 20px;
+    border-left: 4px solid #1B2B4B;
+  }
+  .s5-summary-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  .s5-summary-item {
+    font-size: 13px;
+    color: #333;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .s5-check { color: #30c96e; font-weight: 700; }
+  .s5-form {}
+  .s5-field-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+  .s5-field-label:first-of-type { margin-top: 0; }
+  .s5-input {
+    width: 100%;
+    border: 1.5px solid #d0d0d0;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+  }
+  .s5-input.placeholder { color: #bbb; }
+  .s5-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .s5-submit {
+    width: 100%;
+    background: #1B2B4B;
+    color: #fff;
+    padding: 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .s5-consent {
+    font-size: 11px;
+    color: #aaa;
+    line-height: 1.5;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* ════════════════════════════════════════════════
+     STAGE 6 — Expert Assignment
+  ════════════════════════════════════════════════ */
+  .s6-body {
+    background: #fff;
+    padding: 48px;
+    text-align: center;
+  }
+  .s6-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C8A96E;
+    margin-bottom: 10px;
+  }
+  .s6-heading {
+    font-size: 26px;
+    font-weight: 800;
+    color: #1B2B4B;
+    margin-bottom: 8px;
+  }
+  .s6-sub {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 36px;
+  }
+  .s6-agent-card {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 24px;
+    background: #f8f9fc;
+    border-radius: 12px;
+    padding: 28px 32px;
+    border: 1px solid #e0e4ed;
+    text-align: left;
+    max-width: 520px;
+    margin: 0 auto 28px;
+  }
+  .s6-avatar {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2d4a70, #1B2B4B);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #C8A96E;
+  }
+  .s6-agent-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1B2B4B;
+    margin-bottom: 4px;
+  }
+  .s6-agent-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #C8A96E;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .s6-agent-stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .s6-stat {
+    font-size: 12px;
+    color: #555;
+  }
+  .s6-stat strong {
+    color: #1B2B4B;
+  }
+  .s6-agent-bio {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  .s6-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  .s6-btn-primary {
+    background: #1B2B4B;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .s6-btn-secondary {
+    border: 2px solid #1B2B4B;
+    color: #1B2B4B;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .s6-reassign {
+    font-size: 12px;
+    color: #aaa;
+    text-decoration: underline;
+    margin-top: 16px;
+    cursor: pointer;
+  }
+
+  /* ════════════════════════════════════════════════
+     STAGE 7 — Confirmation
+  ════════════════════════════════════════════════ */
+  .s7-body {
+    background: #fff;
+  }
+  .s7-hero {
+    background: linear-gradient(135deg, #1B2B4B 60%, #2d4a70);
+    padding: 52px 48px 44px;
+    text-align: center;
+  }
+  .s7-check-circle {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: #30c96e;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #fff;
+  }
+  .s7-hero-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .s7-hero-sub {
+    font-size: 15px;
+    color: #8ab0d4;
+    max-width: 440px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .s7-next-steps {
+    padding: 36px 48px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .s7-steps-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1B2B4B;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .s7-step-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .s7-step-num {
+    width: 32px; height: 32px;
+    background: #1B2B4B;
+    color: #C8A96E;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .s7-step-content {}
+  .s7-step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1B2B4B;
+    margin-bottom: 2px;
+  }
+  .s7-step-desc {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+  }
+  .s7-cal-block {
+    background: #f8f9fc;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    border: 1px solid #e0e4ed;
+    text-align: center;
+  }
+  .s7-cal-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1B2B4B;
+    margin-bottom: 14px;
+  }
+  .s7-cal-slots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .s7-slot {
+    border: 2px solid #1B2B4B;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1B2B4B;
+    cursor: pointer;
+  }
+  .s7-slot.selected {
+    background: #1B2B4B;
+    color: #fff;
+  }
+  .s7-sms-note {
+    background: #fff8e1;
+    border-radius: 8px;
+    padding: 14px 20px;
+    font-size: 12px;
+    color: #7a5a00;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .s7-sms-icon { font-size: 18px; }
+
+  /* ── Utility ─────────────────────────────────── */
+  .blur-overlay {
+    position: relative;
+  }
+  .blur-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.92);
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+    white-space: nowrap;
+    z-index: 10;
+  }
+  hr.stage-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 8px 0 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Page Header ───────────────────────────── -->
+<div class="page-header">
+  <h1>BuyMyHouse.com — Funnel Stage Mockups</h1>
+  <p>Rough wireframes for dev reference. Color values, copy, and layout reflect the actual spec.
+  All 7 stages shown in order. Two visual modes apply: Institutional/Calm (stages 1,2,4,5,6,7) and Terminal/Dark (stage 3 only).</p>
+  <div class="legend">
+    <div class="legend-item"><div class="swatch swatch-inst"></div><span>Institutional/Calm mode — Navy #1B2B4B, Gold #C8A96E, White</span></div>
+    <div class="legend-item"><div class="swatch swatch-term"></div><span>Terminal mode — #0d1117 background, #30c96e green (Stage 3 ONLY)</span></div>
+  </div>
+</div>
+
+<!-- Stage 1 -->
+<div class="stage-section" id="stage1">
+  <div class="stage-label">
+    <span class="stage-badge">Stage 1</span>
+    <span class="stage-title">Above the Fold — Hero & Address Entry</span>
+    <span class="stage-note">Viewport: full-bleed. LCP target &lt;1.5s on throttled 4G</span>
+  </div>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dot d-red"></div>
+      <div class="browser-dot d-amber"></div>
+      <div class="browser-dot d-green"></div>
+      <div class="browser-url">buymyhouse.com</div>
+    </div>
+    <!-- Nav -->
+    <div class="s1-nav">
+      <div class="s1-logo">BUY<span>MY</span>HOUSE</div>
+      <div class="s1-nav-links">
+        <span>How It Works</span>
+        <span>Reviews</span>
+        <span>About LPT</span>
+      </div>
+    </div>
+    <!-- Hero -->
+    <div class="s1-hero">
+      <div class="s1-eyebrow">LPT Holdings — Verified Local Assessment</div>
+      <div class="s1-headline">Find Out What Your Home Could Sell For</div>
+      <div class="s1-subhead">Enter your address for a complimentary market assessment from a local expert — no obligation.</div>
+      <div class="s1-input-row">
+        <div class="s1-input">123 Main Street, City, State…</div>
+        <div class="s1-cta">Get My Assessment →</div>
+      </div>
+      <div class="s1-trust-row">
+        <div class="s1-trust-item"><div class="s1-trust-icon">✓</div> No spam. No obligation.</div>
+        <div class="s1-trust-item"><div class="s1-trust-icon">✓</div> Local LPT-certified agent</div>
+        <div class="s1-trust-item"><div class="s1-trust-icon">✓</div> 48-hour response</div>
+      </div>
+    </div>
+  </div>
+  <div class="annotations">
+    <div class="ann"><strong>Address Input</strong>Google Places autocomplete. Fallback: plain text + manual ZIP field. Normalise on submit.</div>
+    <div class="ann"><strong>CTA Button</strong>Gold (#C8A96E) on navy. Text: "Get My Assessment →". Never "Submit".</div>
+    <div class="ann"><strong>Trust Row</strong>Three micro-copy chips below input. Reduces anxiety at point of entry.</div>
+    <div class="ann"><strong>Nav</strong>Minimal — only How It Works, Reviews, About LPT. No distracting links.</div>
+  </div>
+</div>
+
+<!-- Stage 2 -->
+<div class="stage-section" id="stage2">
+  <div class="stage-label">
+    <span class="stage-badge">Stage 2</span>
+    <span class="stage-title">Below the Fold — Social Proof & How It Works</span>
+    <span class="stage-note">User scrolls here if hesitant. Sticky CTA bar at bottom.</span>
+  </div>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dot d-red"></div>
+      <div class="browser-dot d-amber"></div>
+      <div class="browser-dot d-green"></div>
+      <div class="browser-url">buymyhouse.com/#learn-more</div>
+    </div>
+    <div class="s2-body">
+      <!-- Stats Strip -->
+      <div class="s2-stats">
+        <div>
+          <div class="s2-stat-num">2,400+</div>
+          <div class="s2-stat-label">Homes Assessed</div>
+        </div>
+        <div>
+          <div class="s2-stat-num">$1.2B</div>
+          <div class="s2-stat-label">Total Value Assessed</div>
+        </div>
+        <div>
+          <div class="s2-stat-num">48 hrs</div>
+          <div class="s2-stat-label">Avg. First Contact</div>
+        </div>
+        <div>
+          <div class="s2-stat-num">4.9★</div>
+          <div class="s2-stat-label">Seller Satisfaction</div>
+        </div>
+      </div>
+      <!-- How It Works -->
+      <div class="s2-how">
+        <div class="s2-section-label">Process</div>
+        <div class="s2-section-title">How It Works</div>
+        <div class="s2-steps">
+          <div class="s2-step">
+            <div class="s2-step-num">1</div>
+            <div class="s2-step-title">Enter Your Address</div>
+            <div class="s2-step-desc">Takes 60 seconds. We pull live market data for your property.</div>
+          </div>
+          <div class="s2-step">
+            <div class="s2-step-num">2</div>
+            <div class="s2-step-title">We Match You to an Expert</div>
+            <div class="s2-step-desc">A local LPT-certified agent reviews your home's profile.</div>
+          </div>
+          <div class="s2-step">
+            <div class="s2-step-num">3</div>
+            <div class="s2-step-title">Get Your Options</div>
+            <div class="s2-step-desc">Cash offer or full market listing — you choose what fits your life.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonials -->
+      <div class="s2-testimonials">
+        <div class="s2-testi">
+          <div class="s2-stars">★★★★★</div>
+          <div class="s2-quote">"I filled out the form on a Tuesday. By Thursday I had a real number from a real person — not a robot."</div>
+          <div class="s2-reviewer">Sandra M. — Phoenix, AZ</div>
+        </div>
+        <div class="s2-testi">
+          <div class="s2-stars">★★★★★</div>
+          <div class="s2-quote">"We chose the market path and our agent had an offer in 8 days. BuyMyHouse made the first step easy."</div>
+          <div class="s2-reviewer">Kevin &amp; Trish O. — Tampa, FL</div>
+        </div>
+      </div>
+      <!-- Sticky CTA Bar -->
+      <div class="s2-cta-bar">
+        <div class="s2-cta-text">Ready to see what your home is worth?</div>
+        <div class="s2-cta-btn">Get My Assessment →</div>
+      </div>
+    </div>
+  </div>
+  <div class="annotations">
+    <div class="ann"><strong>Stats Strip</strong>Pull from static config for hackathon. In production these are CMS-managed.</div>
+    <div class="ann"><strong>Testimonials</strong>Hardcoded for hackathon. Carousel optional — even static 2-up is fine.</div>
+    <div class="ann"><strong>Sticky CTA Bar</strong>Repeats hero CTA. Anchors back to Stage 1 address input via smooth scroll.</div>
+  </div>
+</div>
+
+<!-- Stage 3 Dark -->
+<div class="stage-section" id="stage3">
+  <div class="stage-label">
+    <span class="stage-badge terminal">Stage 3</span>
+    <span class="stage-title">Evaluation Interstitial — Terminal Animation</span>
+    <span class="stage-note">⚠ THIS IS THE ONLY DARK/TERMINAL STAGE. All others stay institutional/calm.</span>
+  </div>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dot d-red"></div>
+      <div class="browser-dot d-amber"></div>
+      <div class="browser-dot d-green"></div>
+      <div class="browser-url">buymyhouse.com/evaluation</div>
+    </div>
+    <div class="s3-terminal">
+      <div class="s3-header">
+        <div class="s3-logo-small">BMH / EVAL</div>
+        <div class="s3-separator">|</div>
+        <div class="s3-system-tag">LPT Market Intelligence v2.1</div>
+      </div>
+      <div class="s3-lines">
+        <div class="s3-line dim"><span class="s3-prompt">$</span> init market_assessment --address</div>
+        <div class="s3-line addr">&nbsp;&nbsp;&nbsp;→ 1847 Ridgeline Dr, Scottsdale AZ 85251</div>
+        <div class="s3-line dim">&nbsp;</div>
+        <div class="s3-line"><span class="s3-prompt">▶</span> Fetching MLS comps for ZIP 85251…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#1e5c34">[ ████████████░░░ 78% ]</span></div>
+        <div class="s3-line"><span class="s3-prompt">▶</span> Analysing 6 comparable sales (90 days)…&nbsp;&nbsp;<span style="color:#30c96e">[ ████████████████ DONE ]</span></div>
+        <div class="s3-line"><span class="s3-prompt">▶</span> Scoring buyer demand index…&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#30c96e">[ ████████████████ DONE ]</span></div>
+        <div class="s3-line"><span class="s3-prompt">▶</span> Cross-referencing agent availability…&nbsp;&nbsp;&nbsp;<span style="color:#30c96e">[ ████████████████ DONE ]</span></div>
+
+        <div class="s3-progress-bar"><div class="s3-progress-fill"></div></div>
+
+        <div class="s3-result-box">
+          <div class="s3-result-label">Alignment Assessment</div>
+          <div class="s3-result-tier">Strong Alignment</div>
+          <div class="s3-result-desc">Your property profile places it in the top tier for current market conditions in Scottsdale. Estimated demand index: 87/100. A local expert will review your full assessment within 48 hours.<span class="s3-cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="annotations">
+    <div class="ann"><strong>Font</strong>Courier New or Menlo. Monospace only. Zero sans-serif here.</div>
+    <div class="ann"><strong>Progress Lines</strong>Fake async sequence — 4 lines animate in ~200ms intervals using setTimeout. No real API needed.</div>
+    <div class="ann"><strong>Alignment Tiers</strong>"Strong Alignment", "Within Range", or "Additional Assessment". Map from mock JSON alignmentTier field.</div>
+    <div class="ann"><strong>Auto-advance</strong>After ~3s, page transitions to Stage 4. Or user clicks "Continue". Never stay stuck here.</div>
+    <div class="ann"><strong>Colors</strong>#30c96e on #0d1117 only. No navy. No gold. Stark contrast switch vs. other stages.</div>
+  </div>
+</div>
+
+<!-- Stage 3 Light -->
+<a id="stage3light"></a>
+<style>
+  /* Stage 3 Light variant styles — scoped with .s3l- prefix */
+  .s3-variant-header {
+    max-width: 960px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+  }
+  .s3-variant-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #888;
+    text-transform: uppercase;
+  }
+  .s3-variant-divider { flex: 1; height: 1px; background: #e8e8e8; }
+  .s3-demo-links {
+    display: flex;
+    gap: 10px;
+    max-width: 960px;
+    margin: 14px auto 0;
+  }
+  .s3-demo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+  }
+  .s3-demo-link:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+  .s3-demo-link.dark  { background: #0d1117; color: #30c96e; border: 1px solid #30c96e; }
+  .s3-demo-link.light { background: #1B2B4B; color: #C8A96E; border: 1px solid #1B2B4B; }
+  .s3-demo-link.skim  { background: #2a1a00; color: #C8A96E; border: 1px solid #7a5020; }
+  .s3-demo-link .link-icon { font-size: 14px; }
+  /* Light card mockup */
+  .s3l-bg { background: #EEF2F7; padding: 32px; }
+  .s3l-card {
+    background: #fff;
+    border-radius: 14px;
+    max-width: 520px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(27,43,75,0.1);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .s3l-accent { height: 3px; background: linear-gradient(90deg, #1B2B4B, #2E4A7A, #C8A96E); }
+  .s3l-header {
+    padding: 18px 22px 16px;
+    border-bottom: 1px solid #F0F3F7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .s3l-logo { font-size: 13px; font-weight: 800; color: #1B2B4B; }
+  .s3l-logo span { color: #C8A96E; }
+  .s3l-logo-sub { font-size: 10px; color: #9AABB8; margin-top: 1px; }
+  .s3l-badge {
+    display: flex; align-items: center; gap: 5px;
+    background: #F0F7FF; border: 1px solid #D0E4F7;
+    border-radius: 20px; padding: 4px 10px;
+    font-size: 10px; font-weight: 600; color: #2E6AAA;
+  }
+  .s3l-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: #2E9E60; }
+  .s3l-addr-row {
+    padding: 13px 22px;
+    background: #F8FAFC;
+    border-bottom: 1px solid #F0F3F7;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .s3l-addr-icon {
+    width: 30px; height: 30px; border-radius: 7px; background: #1B2B4B;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-size: 14px;
+  }
+  .s3l-addr-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: #9AABB8; margin-bottom: 1px; }
+  .s3l-addr-val { font-size: 12px; font-weight: 600; color: #1B2B4B; }
+  .s3l-steps { padding: 18px 22px 14px; }
+  .s3l-step { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .s3l-dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 1.5px solid #D8E3ED; background: #fff;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-size: 9px;
+  }
+  .s3l-dot.done  { background: #1B2B4B; border-color: #1B2B4B; color: #fff; }
+  .s3l-dot.active{ background: #F0F4FA; border-color: #1B2B4B; }
+  .s3l-dot.active::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #1B2B4B; }
+  .s3l-step-body { flex: 1; }
+  .s3l-step-label { font-size: 11.5px; font-weight: 500; color: #4A5E72; margin-bottom: 5px; }
+  .s3l-step.done  .s3l-step-label { color: #1B2B4B; }
+  .s3l-step.active .s3l-step-label { color: #1B2B4B; font-weight: 600; }
+  .s3l-track { height: 2px; background: #EEF2F7; border-radius: 1px; overflow: hidden; }
+  .s3l-fill { height: 100%; border-radius: 1px; background: linear-gradient(90deg, #1B2B4B, #2E6AAA); }
+  .s3l-step-status { font-size: 10px; min-width: 42px; text-align: right; }
+  .s3l-step.done   .s3l-step-status { color: #2E9E60; font-weight: 600; }
+  .s3l-step.active .s3l-step-status { color: #2E6AAA; }
+  .s3l-step.todo   .s3l-step-status { color: #C8D4DC; }
+  .s3l-master { padding: 0 22px 16px; }
+  .s3l-master-hdr { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  .s3l-master-lbl { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #9AABB8; }
+  .s3l-master-pct { font-size: 12px; font-weight: 700; color: #1B2B4B; }
+  .s3l-master-track { height: 4px; background: #EEF2F7; border-radius: 2px; overflow: hidden; }
+  .s3l-master-fill { height: 100%; background: linear-gradient(90deg, #1B2B4B 0%, #2E4A7A 70%, #C8A96E 100%); border-radius: 2px; }
+  .s3l-result {
+    margin: 0 16px 16px; border-radius: 10px; background: #F8FAFC;
+    border: 1px solid #E4ECF4; padding: 16px 18px;
+    border-left: 3px solid #1B2B4B; position: relative;
+  }
+  .s3l-result-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .s3l-tier-pill {
+    background: #1B2B4B; color: #C8A96E;
+    font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 20px;
+  }
+  .s3l-conf { font-size: 10px; color: #9AABB8; }
+  .s3l-result-title { font-size: 18px; font-weight: 800; color: #1B2B4B; margin-bottom: 4px; }
+  .s3l-result-sub { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #7A94A8; margin-bottom: 10px; }
+  .s3l-result-body { font-size: 11.5px; color: #4A5E72; line-height: 1.6; }
+  .s3l-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border-top: 1px solid #E4ECF4; padding-top: 12px; margin-top: 12px; }
+  .s3l-stat { text-align: center; border-right: 1px solid #E4ECF4; padding: 0 4px; }
+  .s3l-stat:last-child { border-right: none; }
+  .s3l-stat-lbl { font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; color: #9AABB8; margin-bottom: 2px; }
+  .s3l-stat-val { font-size: 13px; font-weight: 800; color: #1B2B4B; }
+</style>
+
+<div class="stage-section">
+  <div class="stage-label">
+    <span class="stage-badge">Stage 3 — Alt</span>
+    <span class="stage-title">Evaluation Interstitial — Light / Institutional Variant</span>
+    <span class="stage-note">Same psychological sequence. Institutional/Calm palette. No terminal aesthetics.</span>
+  </div>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dot d-red"></div>
+      <div class="browser-dot d-amber"></div>
+      <div class="browser-dot d-green"></div>
+      <div class="browser-url">buymyhouse.com/evaluation</div>
+    </div>
+    <div class="s3l-bg">
+      <div class="s3l-card">
+        <div class="s3l-accent"></div>
+        <div class="s3l-header">
+          <div>
+            <div class="s3l-logo">Buy<span>My</span>House</div>
+            <div class="s3l-logo-sub">LPT Holdings — Market Assessment</div>
+          </div>
+          <div class="s3l-badge"><div class="s3l-badge-dot"></div>Analyzing</div>
+        </div>
+        <div class="s3l-addr-row">
+          <div class="s3l-addr-icon">📍</div>
+          <div>
+            <div class="s3l-addr-label">Property</div>
+            <div class="s3l-addr-val">1847 Ridgeline Dr, Scottsdale AZ 85251</div>
+          </div>
+        </div>
+        <div class="s3l-steps">
+          <div class="s3l-step done">
+            <div class="s3l-dot done">✓</div>
+            <div class="s3l-step-body">
+              <div class="s3l-step-label">Pulling MLS records · ZIP 85251</div>
+              <div class="s3l-track"><div class="s3l-fill" style="width:100%"></div></div>
+            </div>
+            <div class="s3l-step-status">Done</div>
+          </div>
+          <div class="s3l-step done">
+            <div class="s3l-dot done">✓</div>
+            <div class="s3l-step-body">
+              <div class="s3l-step-label">Scoring comparable sales · 6 matches</div>
+              <div class="s3l-track"><div class="s3l-fill" style="width:100%"></div></div>
+            </div>
+            <div class="s3l-step-status">Done</div>
+          </div>
+          <div class="s3l-step active">
+            <div class="s3l-dot active"></div>
+            <div class="s3l-step-body">
+              <div class="s3l-step-label">Calculating buyer demand index</div>
+              <div class="s3l-track"><div class="s3l-fill" style="width:65%"></div></div>
+            </div>
+            <div class="s3l-step-status">Scanning</div>
+          </div>
+          <div class="s3l-step todo">
+            <div class="s3l-dot"></div>
+            <div class="s3l-step-body">
+              <div class="s3l-step-label">Establishing estimated value band</div>
+              <div class="s3l-track"><div class="s3l-fill" style="width:0%"></div></div>
+            </div>
+            <div class="s3l-step-status todo">—</div>
+          </div>
+          <div class="s3l-step todo">
+            <div class="s3l-dot"></div>
+            <div class="s3l-step-body">
+              <div class="s3l-step-label">Matching certified agent · Scottsdale</div>
+              <div class="s3l-track"><div class="s3l-fill" style="width:0%"></div></div>
+            </div>
+            <div class="s3l-step-status todo">—</div>
+          </div>
+        </div>
+        <div class="s3l-master">
+          <div class="s3l-master-hdr">
+            <div class="s3l-master-lbl">Overall Progress</div>
+            <div class="s3l-master-pct">62%</div>
+          </div>
+          <div class="s3l-master-track"><div class="s3l-master-fill" style="width:62%"></div></div>
+        </div>
+        <div class="s3l-result">
+          <div class="s3l-result-hdr">
+            <div class="s3l-tier-pill">Strong Alignment</div>
+            <div class="s3l-conf">Confidence · 94%</div>
+          </div>
+          <div class="s3l-result-title">Top Market Tier</div>
+          <div class="s3l-result-sub">Active Demand · ZIP 85251 · Top Quartile</div>
+          <div class="s3l-result-body">Your property aligns strongly with active Scottsdale market conditions. A certified LPT agent will review your assessment and reach out within 48 hours.</div>
+          <div class="s3l-stats">
+            <div class="s3l-stat"><div class="s3l-stat-lbl">Est. Value</div><div class="s3l-stat-val">$487–521K</div></div>
+            <div class="s3l-stat"><div class="s3l-stat-lbl">Demand</div><div class="s3l-stat-val">87</div></div>
+            <div class="s3l-stat"><div class="s3l-stat-lbl">Days to Offer</div><div class="s3l-stat-val">14</div></div>
+            <div class="s3l-stat"><div class="s3l-stat-lbl">Comps</div><div class="s3l-stat-val">6</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="annotations">
+    <div class="ann"><strong>Same sequence</strong>Identical 5-step async logic. Only the visual shell changes — white card, navy/gold palette, no monospace.</div>
+    <div class="ann"><strong>Step dots</strong>CSS spring animation on completion. Active dot pulses with a ring. No JS animation library.</div>
+    <div class="ann"><strong>Progress bar</strong>Gradient tip glows gold at the leading edge. Thin 4px — reads as refined, not loading-screen.</div>
+    <div class="ann"><strong>Result card</strong>Lifts with translateY + scale on reveal. Left navy/gold gradient border accent. Stats count up with stagger.</div>
+  </div>
+
+  <!-- Animated demo links for both variants -->
+  <div style="max-width:960px;margin:16px auto 0;padding:16px 20px;background:#fff;border-radius:10px;border:1px solid #e0e0e0;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:12px;">↓ Interactive Animated Demos — open in browser</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a href="./stage3_animated.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#0d1117;color:#30c96e;border:1px solid #30c96e;border-radius:7px;font-size:12px;font-weight:600;text-decoration:none;font-family:Courier New,monospace;letter-spacing:1px;">
+        ▶ &nbsp;System-Log Terminal&nbsp;&nbsp;<span style="opacity:0.5;font-size:10px">stage3_animated.html</span>
+      </a>
+      <a href="./stage3_skeuomorphic.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#1a1a1a;color:#C8A96E;border:1px solid #3a3020;border-radius:7px;font-size:12px;font-weight:600;text-decoration:none;font-family:Courier New,monospace;letter-spacing:1px;">
+        ▶ &nbsp;Premium Hardware Terminal&nbsp;&nbsp;<span style="opacity:0.5;font-size:10px">stage3_skeuomorphic.html</span>
+      </a>
+      <a href="./stage3_light.html" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:#1B2B4B;color:#C8A96E;border:1px solid #1B2B4B;border-radius:7px;font-size:12px;font-weight:600;text-decoration:none;letter-spacing:0.5px;">
+        ▶ &nbsp;Light / Institutional&nbsp;&nbsp;<span style="opacity:0.6;font-size:10px">stage3_light.html</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Stage 4 -->
+<div class="stage-section" id="stage4">
+  <div class="stage-label">
+    <span class="stage-badge">Stage 4</span>
+    <span class="stage-title">Qualification — Card Selection Q&amp;A</span>
+    <span class="stage-note">3–4 questions. One per screen. Card-tap UX — no dropdowns.</span>
+  </div>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dot d-red"></div>
+      <div class="browser-dot d-amber"></div>
+      <div class="browser-dot d-green"></div>
+      <div class="browser-url">buymyhouse.com/qualify</div>
+    </div>
+    <div class="s4-body">
+      <!-- Step Progress -->
+      <div class="s4-progress">
+        <div class="s4-step-dot done">✓</div>
+        <div class="s4-step-line done"></div>
+        <div class="s4-step-dot done">✓</div>
+        <div class="s4-step-line done"></div>
+        <div class="s4-step-dot active">3</div>
+        <div class="s4-step-line todo"></div>
+        <div class="s4-step-dot todo">4</div>
+        <div class="s4-step-line todo"></div>
+        <div class="s4-step-dot todo">5</div>
+      </div>
+      <!-- Question -->
+      <div class="s4-question">How would you describe your home's current condition?</div>
+      <div class="s4-sub">Be honest — it helps us match you to the right expert and offer path.</div>
+      <!-- Cards -->
+      <div class="s4-cards">
+        <div class="s4-card selected">
+          <div class="s4-card-icon">🏡</div>
+          <div class="s4-card-title">Move-In Ready</div>
+          <div class="s4-card-desc">Updated, well-maintained, nothing major needed</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-icon">🔨</div>
+          <div class="s4-card-title">Minor Updates Needed</div>
+          <div class="s4-card-desc">Cosmetic fixes, fresh paint, small repairs</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-icon">🏗</div>
+          <div class="s4-card-title">Needs Work</div>
+          <div class="s4-card-desc">Kitchen, bath, or structural updates required</div>
+        </div>
+        <div class="s4-card">
+          <div class="s4-card-icon">🏚</div>
+          <div class="s4-card-title">Significant Renovation</div>
+          <div class="s4-card-desc">Major systems or full remodel needed</div>
+        </div>
+      </div>
+      <div class="s4-footer">
+        <div class="s4-back">← Back</div>
+        <div class="s4-next">Continue →</div>
+      </div>
+    </div>
+  </div>
+  <div class="annotations">
+    <div class="ann"><strong>Card Selection</strong>Tapping a card highlights it (navy border + light fill). One selection per question.</div>
+    <div class="ann"><strong>No Dropdowns</strong>Spec explicitly prohibits selects and checkboxes. Cards only.</div>
+    <div class="ann"><strong>Questions (Q1–Q4)</strong>Why selling → Timeline → Condition → Occupancy. Feature-flag structural issues question OFF.</div>
+    <div class="ann"><strong>Progress Dots</strong>Show which step the user is on. Past = checkmark, Current = highlighted, Future = grey.</div>
+  </div>
+</div>
+
+<!-- Stage 5 -->
+<div class="stage-section" id="stage5">
+  <div class="stage-label">
+    <span class="stage-badge">Stage 5</span>
+    <span class="stage-title">Identity — Contact Info Collection</span>
+    <span class="stage-note">Two-column layout. Left = reinforcement copy + summary. Right = form.</span>
+  </div>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dot d-red"></div>
+      <div class="browser-dot d-amber"></div>
+      <div class="browser-dot d-green"></div>
+      <div class="browser-url">buymyhouse.com/contact</div>
+    </div>
+    <div class="s5-body">
+      <!-- Left Column -->
+      <div class="s5-left">
+        <div class="s5-eyebrow">Almost There</div>
+        <div class="s5-heading">Your Assessment is Ready to Be Claimed</div>
+        <div class="s5-body-text">A certified LPT agent will personally review your property and reach out within 48 hours with your complete market assessment.</div>
+        <div class="s5-summary-box">
+          <div class="s5-summary-label">Your Property Profile</div>
+          <div class="s5-summary-item"><span class="s5-check">✓</span> 1847 Ridgeline Dr, Scottsdale AZ 85251</div>
+          <div class="s5-summary-item"><span class="s5-check">✓</span> 3 bed / 2 bath · 1,842 sqft · Built 1998</div>
+          <div class="s5-summary-item"><span class="s5-check">✓</span> Alignment: Strong Market Fit</div>
+          <div class="s5-summary-item"><span class="s5-check">✓</span> Condition: Move-In Ready</div>
+          <div class="s5-summary-item"><span class="s5-check">✓</span> Timeline: Within 3 months</div>
+        </div>
+      </div>
+      <!-- Right Column — Form -->
+      <div class="s5-form">
+        <div class="s5-row">
+          <div>
+            <div class="s5-field-label">First Name</div>
+            <div class="s5-input">Sarah</div>
+          </div>
+          <div>
+            <div class="s5-field-label">Last Name</div>
+            <div class="s5-input">Martinez</div>
+          </div>
+        </div>
+        <div class="s5-field-label">Email Address</div>
+        <div class="s5-input placeholder">you@email.com</div>
+        <div class="s5-field-label">Phone Number</div>
+        <div class="s5-input placeholder">(555) 000-0000</div>
+        <div class="s5-field-label">Best Time to Reach You</div>
+        <div class="s5-input" style="color:#bbb">Morning / Afternoon / Evening</div>
+        <div class="s5-submit">Connect Me With an Expert →</div>
+        <div class="s5-consent">By submitting, you agree to be contacted by an LPT Holdings agent. No spam. Unsubscribe anytime.</div>
+      </div>
+    </div>
+  </div>
+  <div class="annotations">
+    <div class="ann"><strong>Summary Left Column</strong>Echo back what we know: address, property facts, alignment tier, their answers. Builds trust before form.</div>
+    <div class="ann"><strong>CTA Copy</strong>"Connect Me With an Expert →" — not "Submit". Action-oriented, not transactional.</div>
+    <div class="ann"><strong>Phone</strong>Required. SMS feature flag OFF at launch, but phone collected for agent follow-up.</div>
+    <div class="ann"><strong>Consent Line</strong>Required below submit. Keep it very short.</div>
+  </div>
+</div>
+
+<!-- Stage 6 -->
+<div class="stage-section" id="stage6">
+  <div class="stage-label">
+    <span class="stage-badge">Stage 6</span>
+    <span class="stage-title">Expert Assignment — Agent Match Card</span>
+    <span class="stage-note">Psychological peak: seller feels personally attended to.</span>
+  </div>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dot d-red"></div>
+      <div class="browser-dot d-amber"></div>
+      <div class="browser-dot d-green"></div>
+      <div class="browser-url">buymyhouse.com/your-expert</div>
+    </div>
+    <div class="s6-body">
+      <div class="s6-eyebrow">Your Dedicated Expert</div>
+      <div class="s6-heading">Meet Your Local Assessment Specialist</div>
+      <div class="s6-sub">Selected based on your ZIP code, property type, and market conditions in Scottsdale.</div>
+      <!-- Agent Card -->
+      <div class="s6-agent-card">
+        <div class="s6-avatar">👤</div>
+        <div>
+          <div class="s6-agent-name">Jennifer Caldwell</div>
+          <div class="s6-agent-title">LPT Certified Assessment Specialist</div>
+          <div class="s6-agent-stats">
+            <div class="s6-stat"><strong>94</strong> homes assessed</div>
+            <div class="s6-stat"><strong>8 yrs</strong> Scottsdale market</div>
+            <div class="s6-stat"><strong>4.9★</strong> seller rating</div>
+          </div>
+          <div class="s6-agent-bio">Jennifer specialises in Scottsdale and Paradise Valley residential sales. She'll personally review your home profile and contact you with your market assessment options.</div>
+        </div>
+      </div>
+      <div class="s6-actions">
+        <div class="s6-btn-primary">Schedule My Assessment →</div>
+        <div class="s6-btn-secondary">Continue to Confirmation</div>
+      </div>
+      <div class="s6-reassign">Not a fit? Request a different specialist</div>
+    </div>
+  </div>
+  <div class="annotations">
+    <div class="ann"><strong>Agent Card</strong>For hackathon, assign from a small static pool (3–5 agents) based on ZIP code prefix. No real routing API.</div>
+    <div class="ann"><strong>Avatar</strong>Placeholder icon for hackathon. Post-launch: actual headshot from agent CMS.</div>
+    <div class="ann"><strong>Stats</strong>Hardcoded plausible numbers for hackathon. These reinforce credibility.</div>
+    <div class="ann"><strong>Reassign Link</strong>Small, not prominent. Just cycles to next agent in pool.</div>
+  </div>
+</div>
+
+<!-- Stage 7 -->
+<div class="stage-section" id="stage7">
+  <div class="stage-label">
+    <span class="stage-badge">Stage 7</span>
+    <span class="stage-title">Confirmation — Success State &amp; Next Steps</span>
+    <span class="stage-note">Final stage. Reassure, restate commitment, offer calendar booking.</span>
+  </div>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dot d-red"></div>
+      <div class="browser-dot d-amber"></div>
+      <div class="browser-dot d-green"></div>
+      <div class="browser-url">buymyhouse.com/confirmed</div>
+    </div>
+    <div class="s7-body">
+      <div class="s7-hero">
+        <div class="s7-check-circle">✓</div>
+        <div class="s7-hero-title">You're Confirmed, Sarah.</div>
+        <div class="s7-hero-sub">Jennifer Caldwell will reach out within 48 hours to review your assessment and walk you through your options.</div>
+      </div>
+      <div class="s7-next-steps">
+        <div class="s7-steps-title">What Happens Next</div>
+        <div class="s7-step-row">
+          <div class="s7-step-num">1</div>
+          <div class="s7-step-content">
+            <div class="s7-step-title">Personal Review</div>
+            <div class="s7-step-desc">Jennifer reviews your property profile and pulls live comparable sales for your neighbourhood.</div>
+          </div>
+        </div>
+        <div class="s7-step-row">
+          <div class="s7-step-num">2</div>
+          <div class="s7-step-content">
+            <div class="s7-step-title">Your Options Call</div>
+            <div class="s7-step-desc">She'll present you with both a Certainty Path (cash offer) and Market Path (listing) — you decide which fits your situation.</div>
+          </div>
+        </div>
+        <div class="s7-step-row">
+          <div class="s7-step-num">3</div>
+          <div class="s7-step-content">
+            <div class="s7-step-title">In-Person Walk-Through</div>
+            <div class="s7-step-desc">Optional on-site visit to verify condition and finalize any offer details.</div>
+          </div>
+        </div>
+        <!-- Calendar Block -->
+        <div class="s7-cal-block">
+          <div class="s7-cal-title">Want to lock in a time now? (Optional)</div>
+          <div class="s7-cal-slots">
+            <div class="s7-slot">Tue Mar 25, 10am</div>
+            <div class="s7-slot selected">Tue Mar 25, 2pm</div>
+            <div class="s7-slot">Wed Mar 26, 9am</div>
+            <div class="s7-slot">Wed Mar 26, 11am</div>
+          </div>
+        </div>
+        <!-- SMS Flag Note -->
+        <div class="s7-sms-note">
+          <div class="s7-sms-icon">💬</div>
+          <div><strong>SMS Reminder</strong> — Feature flag is OFF at launch. Text confirmations will be enabled post-hackathon via Twilio.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="annotations">
+    <div class="ann"><strong>Personalisation</strong>Use first name in headline ("You're Confirmed, Sarah."). Pull from form submission state.</div>
+    <div class="ann"><strong>Dual Path Reveal</strong>This is the FIRST place the Certainty/Market path is mentioned. Never surface it earlier in the funnel.</div>
+    <div class="ann"><strong>Calendar</strong>Hardcoded slot array for hackathon. Post-launch: Calendly or agent calendar API.</div>
+    <div class="ann"><strong>SMS Note</strong>Feature flag reference kept as annotation only — no UI element needed at hackathon demo.</div>
+  </div>
+</div>
+
+<div style="max-width:960px;margin:0 auto 60px;font-size:12px;color:#aaa;text-align:center;padding-top:20px;border-top:1px solid #ddd;">
+  BuyMyHouse.com — Internal Dev Reference · LPT Holdings, Inc. · Hackathon 2026
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+/* Design Tokens — matched to stage_mockups.html */
+@theme {
+  --color-navy: #1B2B4B;
+  --color-navy-dark: #142038;
+  --color-gold: #C8A96E;
+  --color-charcoal: #222222;
+  --color-light-blue: #8ab0d4;
+  --color-body-grey: #f0f0f0;
+  --color-card-bg: #f8f9fc;
+  --color-terminal-bg: #0D1117;
+  --color-terminal-green: #30c96e;
+  --color-terminal-green-bright: #5dff9f;
+  --color-terminal-dim: #1e5c34;
+  --color-terminal-grey: #AAAAAA;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Courier New', 'Menlo', monospace;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

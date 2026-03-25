@@ -1,0 +1,187 @@
+{
+  "_meta": {
+    "description": "BuyMyHouse.com — Pod 1 mock data. Mirrors Pod 2 API /market-comps?zip= response shape. Post-hackathon: replace JSON import with fetch('/api/pod2/market-comps?zip=...'). Used by the Evaluation Interstitial (Stage 3) to simulate real market analysis.",
+    "version": "1.0.0",
+    "environment": "hackathon-mock"
+  },
+  "78701": {
+    "zip": "78701",
+    "city": "Austin",
+    "state": "TX",
+    "neighborhood": "Downtown / East Austin",
+    "medianSalePrice": 524000,
+    "avgDaysToOffer": 11,
+    "buyerDemandScore": 84,
+    "marketVerb": "Active",
+    "inventoryMonths": 1.4,
+    "recentComps": [
+      { "address": "1201 Maple Grove Dr, Austin TX", "soldPrice": 511000, "soldDate": "2026-02-18", "sqft": 2100, "pricePerSqft": 243 },
+      { "address": "1309 Red River St, Austin TX",   "soldPrice": 490000, "soldDate": "2026-02-04", "sqft": 1980, "pricePerSqft": 247 },
+      { "address": "1088 E 12th St, Austin TX",       "soldPrice": 545000, "soldDate": "2026-01-28", "sqft": 2280, "pricePerSqft": 239 },
+      { "address": "1415 Garden Ave, Austin TX",      "soldPrice": 498000, "soldDate": "2026-01-15", "sqft": 2050, "pricePerSqft": 243 },
+      { "address": "1520 Cherrywood Rd, Austin TX",   "soldPrice": 562000, "soldDate": "2026-01-09", "sqft": 2310, "pricePerSqft": 243 }
+    ]
+  },
+  "78704": {
+    "zip": "78704",
+    "city": "Austin",
+    "state": "TX",
+    "neighborhood": "South Congress / Bouldin Creek",
+    "medianSalePrice": 595000,
+    "avgDaysToOffer": 8,
+    "buyerDemandScore": 91,
+    "marketVerb": "Strong",
+    "inventoryMonths": 0.9,
+    "recentComps": [
+      { "address": "2210 S Congress Ave, Austin TX",  "soldPrice": 572000, "soldDate": "2026-02-22", "sqft": 1620, "pricePerSqft": 353 },
+      { "address": "2415 Bluebonnet Ln, Austin TX",   "soldPrice": 610000, "soldDate": "2026-02-10", "sqft": 1750, "pricePerSqft": 349 },
+      { "address": "2088 Mary St, Austin TX",         "soldPrice": 588000, "soldDate": "2026-01-30", "sqft": 1680, "pricePerSqft": 350 },
+      { "address": "2550 S 1st St, Austin TX",        "soldPrice": 625000, "soldDate": "2026-01-20", "sqft": 1800, "pricePerSqft": 347 },
+      { "address": "2304 Kinney Rd, Austin TX",       "soldPrice": 599000, "soldDate": "2026-01-11", "sqft": 1710, "pricePerSqft": 350 }
+    ]
+  },
+  "80216": {
+    "zip": "80216",
+    "city": "Denver",
+    "state": "CO",
+    "neighborhood": "RiNo / River North",
+    "medianSalePrice": 542000,
+    "avgDaysToOffer": 16,
+    "buyerDemandScore": 77,
+    "marketVerb": "Active",
+    "inventoryMonths": 2.1,
+    "recentComps": [
+      { "address": "4510 Brighton Blvd, Denver CO",  "soldPrice": 528000, "soldDate": "2026-02-15", "sqft": 1840, "pricePerSqft": 287 },
+      { "address": "4788 Walnut St, Denver CO",       "soldPrice": 555000, "soldDate": "2026-02-02", "sqft": 1920, "pricePerSqft": 289 },
+      { "address": "4301 Fox St, Denver CO",          "soldPrice": 511000, "soldDate": "2026-01-25", "sqft": 1780, "pricePerSqft": 287 },
+      { "address": "4640 Blake St, Denver CO",        "soldPrice": 572000, "soldDate": "2026-01-18", "sqft": 1990, "pricePerSqft": 288 },
+      { "address": "4415 Larimer St, Denver CO",      "soldPrice": 538000, "soldDate": "2026-01-07", "sqft": 1870, "pricePerSqft": 288 }
+    ]
+  },
+  "37212": {
+    "zip": "37212",
+    "city": "Nashville",
+    "state": "TN",
+    "neighborhood": "Green Hills / 12South",
+    "medianSalePrice": 618000,
+    "avgDaysToOffer": 9,
+    "buyerDemandScore": 88,
+    "marketVerb": "Strong",
+    "inventoryMonths": 1.1,
+    "recentComps": [
+      { "address": "7204 Belmont Blvd, Nashville TN", "soldPrice": 595000, "soldDate": "2026-02-19", "sqft": 1680, "pricePerSqft": 354 },
+      { "address": "7488 Lealand Ln, Nashville TN",   "soldPrice": 632000, "soldDate": "2026-02-07", "sqft": 1760, "pricePerSqft": 359 },
+      { "address": "7101 Granny White Pike, Nashville TN", "soldPrice": 609000, "soldDate": "2026-01-29", "sqft": 1700, "pricePerSqft": 358 },
+      { "address": "7520 Harding Pike, Nashville TN", "soldPrice": 648000, "soldDate": "2026-01-17", "sqft": 1820, "pricePerSqft": 356 },
+      { "address": "7310 Esteswood Dr, Nashville TN", "soldPrice": 601000, "soldDate": "2026-01-08", "sqft": 1690, "pricePerSqft": 356 }
+    ]
+  },
+  "85255": {
+    "zip": "85255",
+    "city": "Phoenix",
+    "state": "AZ",
+    "neighborhood": "North Scottsdale / Pinnacle Peak",
+    "medianSalePrice": 882000,
+    "avgDaysToOffer": 24,
+    "buyerDemandScore": 68,
+    "marketVerb": "Moderate",
+    "inventoryMonths": 3.2,
+    "recentComps": [
+      { "address": "10015 E Happy Valley Rd, Scottsdale AZ", "soldPrice": 855000, "soldDate": "2026-02-12", "sqft": 3040, "pricePerSqft": 281 },
+      { "address": "10380 E Sonoran Blvd, Scottsdale AZ",    "soldPrice": 912000, "soldDate": "2026-01-30", "sqft": 3220, "pricePerSqft": 283 },
+      { "address": "9880 E Thompson Peak Pkwy, Scottsdale AZ", "soldPrice": 878000, "soldDate": "2026-01-20", "sqft": 3110, "pricePerSqft": 282 },
+      { "address": "10520 E Legacy Blvd, Scottsdale AZ",     "soldPrice": 945000, "soldDate": "2026-01-10", "sqft": 3350, "pricePerSqft": 282 },
+      { "address": "10140 E Desert Cove Ave, Scottsdale AZ", "soldPrice": 868000, "soldDate": "2025-12-28", "sqft": 3080, "pricePerSqft": 282 }
+    ]
+  },
+  "97211": {
+    "zip": "97211",
+    "city": "Portland",
+    "state": "OR",
+    "neighborhood": "Alberta Arts District / NE Portland",
+    "medianSalePrice": 498000,
+    "avgDaysToOffer": 14,
+    "buyerDemandScore": 80,
+    "marketVerb": "Active",
+    "inventoryMonths": 1.8,
+    "recentComps": [
+      { "address": "13210 NE Alberta St, Portland OR", "soldPrice": 482000, "soldDate": "2026-02-16", "sqft": 1620, "pricePerSqft": 298 },
+      { "address": "13580 NE Prescott St, Portland OR", "soldPrice": 510000, "soldDate": "2026-02-04", "sqft": 1710, "pricePerSqft": 298 },
+      { "address": "13090 NE Beech St, Portland OR",    "soldPrice": 475000, "soldDate": "2026-01-26", "sqft": 1590, "pricePerSqft": 299 },
+      { "address": "13740 NE Sacramento St, Portland OR","soldPrice": 522000, "soldDate": "2026-01-14", "sqft": 1750, "pricePerSqft": 299 },
+      { "address": "13380 NE Wygant St, Portland OR",   "soldPrice": 490000, "soldDate": "2026-01-05", "sqft": 1640, "pricePerSqft": 299 }
+    ]
+  },
+  "28205": {
+    "zip": "28205",
+    "city": "Charlotte",
+    "state": "NC",
+    "neighborhood": "Plaza Midwood / NoDa",
+    "medianSalePrice": 415000,
+    "avgDaysToOffer": 12,
+    "buyerDemandScore": 85,
+    "marketVerb": "Strong",
+    "inventoryMonths": 1.3,
+    "recentComps": [
+      { "address": "280 Parkwood Ave, Charlotte NC",   "soldPrice": 401000, "soldDate": "2026-02-20", "sqft": 1510, "pricePerSqft": 266 },
+      { "address": "440 Clement Ave, Charlotte NC",    "soldPrice": 428000, "soldDate": "2026-02-08", "sqft": 1600, "pricePerSqft": 268 },
+      { "address": "320 Central Ave, Charlotte NC",    "soldPrice": 411000, "soldDate": "2026-01-28", "sqft": 1540, "pricePerSqft": 267 },
+      { "address": "508 Hawthorne Ln, Charlotte NC",   "soldPrice": 444000, "soldDate": "2026-01-16", "sqft": 1660, "pricePerSqft": 267 },
+      { "address": "258 Kings Dr, Charlotte NC",       "soldPrice": 397000, "soldDate": "2026-01-06", "sqft": 1490, "pricePerSqft": 267 }
+    ]
+  },
+  "33602": {
+    "zip": "33602",
+    "city": "Tampa",
+    "state": "FL",
+    "neighborhood": "Downtown Tampa / Ybor City",
+    "medianSalePrice": 462000,
+    "avgDaysToOffer": 10,
+    "buyerDemandScore": 92,
+    "marketVerb": "Strong",
+    "inventoryMonths": 0.8,
+    "recentComps": [
+      { "address": "820 Franklin St, Tampa FL",        "soldPrice": 444000, "soldDate": "2026-02-21", "sqft": 1970, "pricePerSqft": 225 },
+      { "address": "910 Jackson St, Tampa FL",         "soldPrice": 471000, "soldDate": "2026-02-09", "sqft": 2090, "pricePerSqft": 225 },
+      { "address": "748 Whiting St, Tampa FL",         "soldPrice": 452000, "soldDate": "2026-01-30", "sqft": 2010, "pricePerSqft": 225 },
+      { "address": "1010 Water St, Tampa FL",          "soldPrice": 485000, "soldDate": "2026-01-18", "sqft": 2150, "pricePerSqft": 226 },
+      { "address": "860 Zack St, Tampa FL",            "soldPrice": 448000, "soldDate": "2026-01-07", "sqft": 1990, "pricePerSqft": 225 }
+    ]
+  },
+  "30312": {
+    "zip": "30312",
+    "city": "Atlanta",
+    "state": "GA",
+    "neighborhood": "Inman Park / Cabbagetown",
+    "medianSalePrice": 558000,
+    "avgDaysToOffer": 11,
+    "buyerDemandScore": 89,
+    "marketVerb": "Strong",
+    "inventoryMonths": 1.0,
+    "recentComps": [
+      { "address": "520 Edgewood Ave SE, Atlanta GA",  "soldPrice": 538000, "soldDate": "2026-02-17", "sqft": 1820, "pricePerSqft": 296 },
+      { "address": "610 Moreland Ave SE, Atlanta GA",  "soldPrice": 572000, "soldDate": "2026-02-05", "sqft": 1930, "pricePerSqft": 297 },
+      { "address": "480 DeKalb Ave SE, Atlanta GA",    "soldPrice": 544000, "soldDate": "2026-01-27", "sqft": 1840, "pricePerSqft": 296 },
+      { "address": "695 Memorial Dr SE, Atlanta GA",   "soldPrice": 588000, "soldDate": "2026-01-15", "sqft": 1980, "pricePerSqft": 297 },
+      { "address": "530 Lake Ave SE, Atlanta GA",      "soldPrice": 551000, "soldDate": "2026-01-04", "sqft": 1860, "pricePerSqft": 296 }
+    ]
+  },
+  "27601": {
+    "zip": "27601",
+    "city": "Raleigh",
+    "state": "NC",
+    "neighborhood": "Downtown Raleigh / Glenwood South",
+    "medianSalePrice": 478000,
+    "avgDaysToOffer": 13,
+    "buyerDemandScore": 86,
+    "marketVerb": "Active",
+    "inventoryMonths": 1.5,
+    "recentComps": [
+      { "address": "901 Blount St, Raleigh NC",        "soldPrice": 462000, "soldDate": "2026-02-18", "sqft": 2080, "pricePerSqft": 222 },
+      { "address": "1020 Peace St, Raleigh NC",        "soldPrice": 491000, "soldDate": "2026-02-06", "sqft": 2210, "pricePerSqft": 222 },
+      { "address": "840 N Person St, Raleigh NC",      "soldPrice": 468000, "soldDate": "2026-01-28", "sqft": 2110, "pricePerSqft": 222 },
+      { "address": "1105 Oakwood Ave, Raleigh NC",     "soldPrice": 503000, "soldDate": "2026-01-16", "sqft": 2260, "pricePerSqft": 223 },
+      { "address": "932 Polk St, Raleigh NC",          "soldPrice": 473000, "soldDate": "2026-01-05", "sqft": 2130, "pricePerSqft": 222 }
+    ]
+  }
+}

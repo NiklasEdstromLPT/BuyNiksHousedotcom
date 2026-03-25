@@ -1,0 +1,682 @@
+PAGES: 19
+
+===== PAGE 1 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 1 
+ 
+BUYMYHOUSE.COM 
+ 
+Hackathon Product Document 
+Pod 1  |  Front-End Build  |  Seller Funnel UI 
+ 
+ 
+CONFIDENTIAL  INTERNAL USE ONLY  |  LPT Holdings, Inc. 
+ 
+3-Hour Mini Hackathon    Designers & Devs    AI-Assisted    March 2026 
+  
+===== PAGE 2 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 2 
+Table of Contents 
+ 
+1  Executive Summary & Product Vision .............................................................................................  
+2  Hackathon Goals & Success Criteria ...............................................................................................  
+3  Scope ........................................................................................................................................................  
+4  The 7-Stage Seller Funnel ...................................................................................................................  
+4.14.7  Stages 1 through 7 (detailed specs) ...........................................................................................  
+5  The Dual-Path Offer System ...............................................................................................................  
+6  Data Sources & Integrations ...............................................................................................................  
+7  Mock Data Specification ......................................................................................................................  
+8  Technical Requirements ......................................................................................................................  
+9  Design Rules & Visual System ...........................................................................................................  
+10  Team Tracks & Time Plan .................................................................................................................  
+11  AI Prompt Templates ..........................................................................................................................  
+12  Demo Script ..........................................................................................................................................  
+13  Post-Hackathon Roadmap ................................................................................................................  
+  
+===== PAGE 3 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 3 
+1. Executive Summary & Product Vision 
+ 
+BuyMyHouse.com is a seller origination and dual-path conversion platform operated by LPT 
+Holdings, Inc. It is not a standard real estate search site. It is a meticulously engineered multi-
+stage psychological conversion architecture designed to capture homeowners at the precise 
+moment of financial decision-making  upstream of MLS listings  and move them toward a 
+no-cost, in-person Professional Property Assessment. 
+ 
+  CRITICAL REFRAME: This is a SELLER funnel, not a buyer search product. 
+   The user is a homeowner who may want to sell. 
+   The product's job is to move them from curious  committed  assessed. 
+   There are no property listings. There are no buyer-facing features. 
+   Every UI decision advances the seller through 7 psychological states. 
+ 
+The Dual-Path Offer System 
+The funnel culminates in a Professional Property Assessment where the seller is presented with 
+two executable options: 
+ The Certainty Path: A firm cash offer  speed, certainty, no repairs, no showings. 
+ The Market Path: A traditional listing with a licensed local LPT Realtor  maximum market 
+value. 
+ 
+Both paths are real. The platforms role is to ensure the seller arrives at the assessment in a 
+high-intent, psychologically committed state. 
+ 
+Company Context (from buymyhouse des.pdf) 
+LPT Holdings operates a Four-Layer Integrated Business Model. BuyMyHouse.com powers 
+Layer 1: 
+ 
+Layer Name What It Does 
+1   
+BuyMyHouse.com 
+Intent Origination Captures sellers before they reach the open market 
+2 Transaction Routing Brokerage control plane with 20,000 managed professionals 
+3 Agent Products CRM, lead gen, tech tools sold as SaaS to agent network 
+4 Placement Layer Workforce infrastructure   recruits and allocates agents 
+ 
+Hackathon Focus: Pod 1 owns everything from the landing page through 
+Confirmation. Layers 24 are downstream and out of scope. 
+ 
+2. Hackathon Goals & Success Criteria 
+===== PAGE 4 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 4 
+ 
+2.1  Primary Goal 
+Ship a working, click-through prototype of all 7 funnel stages  functional in a browser, pixel-
+honest to the design rules, and demonstrable as a complete user journey from address entry to 
+confirmation. 
+ 
+2.2  Success Criteria (demo by end of Hour 3) 
+1. Stage 1: Landing page renders above the fold at 390px with no scroll. Address input 
+prominent. 
+2. Stage 2: Below-fold trust modules (billboard, 3-step, credibility) visible on scroll. 
+3. Stage 3: Terminal interstitial runs its animation sequence and auto-advances. 
+4. Stage 4: Qualification questions render as tap-friendly cards with progress bar. 
+5. Stage 5: Identity form captures name, email, phone with TCPA notice. 
+6. Stage 6: Expert assignment page with correct headline and body copy. 
+7. Stage 7: Confirmation page shows property summary, next steps. No pricing. 
+ 
+2.3  Stretch Goals 
+ A/B test variant toggle via URL param (?v=A or ?v=B) 
+ Mock property lookup  entering a real address populates the interstitial 
+ Smooth stage-to-stage transitions (fade or slide) 
+ Deployed to Vercel for a shareable demo URL 
+ 
+3. Scope 
+ 
+3.1  In Scope 
+ 
+Feature Notes 
+All 7 funnel stage pages/screens Complete UI for every stage 
+Address entry field (Stage 1) Google Places if key available; fallback to styled text input 
+Terminal interstitial animation (Stage 3) Pure CSS/JS, no API needed 
+Property qualification questions (Stage 
+4) 
+Tap-card UI, progress bar, client-side state 
+Identity capture form (Stage 5) Name, email, phone   mock submit only 
+Expert assignment + confirmation (6 & 
+7) 
+Static pages with correct spec copy 
+Two visual modes Institutional/Calm + Terminal/Precise 
+Mobile-first, 390px viewport Desktop secondary; full experience above fold on mobile 
+===== PAGE 5 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 5 
+Feature Notes 
+Mock data layer address_lookup.json + market_comps.json (mirrors Pod 2 API) 
+ 
+3.2  Out of Scope 
+ 
+Feature Why 
+Live Pod 2 API Requires LPT backend credentials   use mock JSON 
+Twilio SMS verification Spec flags OFF at launch   ship OFF 
+Real CRM / lead submission Requires LPT backend   console.log mock 
+GA4 + analytics pipes Needs GTM + data warehouse   skip 
+Edge middleware A/B Too complex for 3 hrs   use URL param 
+Google Ads conversion tags No live campaign 
+Any buyer-facing features Wrong product   no listings, no search, no map 
+ 
+4. The 7-Stage Seller Funnel 
+ 
+Each stage produces a specific psychological state. Stages are strictly sequential. Do not 
+merge, reorder, or simplify  the conversion architecture collapses. 
+ 
+Stage Screen Psych Trigger Seller State 
+1 Above the Fold Cognitive fluency Low friction   just enter address 
+2 Below the Fold Offline recognition + credibility Doubt resolved 
+3 Interstitial Labor illusion + evaluation 
+anxiety 
+Evaluator  evaluated 
+4 Qualification Validation release 'Passed screening' momentum 
+5 Identity Micro-commitment escalation Anonymous  verified lead 
+6 Expert 
+Assignment 
+Reciprocity reframe Platform invests  obligation 
+7 Confirmation Commitment & consistency Socially committed 
+ 
+DOCTRINAL WARNING: Combining Stages 47 to 'reduce friction' is a documented 
+conversion killer. Each stage depends on the psychological state created by the 
+previous stage. Execute with zero deviation. 
+ 
+Stage 1 Above the Fold   Landing Page PSYCHOLOGICAL TRIGGER 
+Cognitive fluency  ad- to-page 
+congruence 
+===== PAGE 6 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 6 
+ 
+ 
+ Interactive mockup:  stage_mockups.html#stage1 
+ 
+Goal 
+Pure motion. Get the seller to enter their property address without cognitive overload. 
+UI Specs 
+ Google Places autocomplete address field = dominant visual anchor (location pin icon) 
+ Mobile (390px): entire above-fold experience visible with zero scroll 
+ PROHIBITED: house hero images, FAQs, process graphics above the fold 
+Copy (exact) 
+Element Copy 
+Headline Sell Your House for Cash. No Repairs. No Surprises. 
+Subheadline Enter your address to check eligibility for a firm cash offer. 
+CTA Button Check My Property 
+Micro 
+Reassurance 
+Check eligibility first. No contact details required. 
+Credibility Backed by LPT Aperture Holdings | Deloitte Fast 500 | Inman Innovator | Training 
+Magazine 
+ 
+Hackathon Approach 
+ Google Places: Use if key available (~5 min). Fallback: styled text input + lookup against 
+address_lookup.json. 
+ 
+
+===== PAGE 7 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 7 
+Stage 2 Below the Fold   Trust Layer PSYCHOLOGICAL TRIGGER 
+Offline recognition + institutional 
+credibility 
+ 
+ 
+ Interactive mockup:  stage_mockups.html#stage2 
+ 
+Goal 
+Stabilize confidence for sellers who scroll instead of immediately entering their address. 
+Modules 
+Module Content A/B Test 
+Billboard 
+Continuity 
+Photo of real BuyMyHouse.com billboard. You may 
+have seen us around town. 
+None 
+3-Step Process 1. Enter address, 2. We review details [Split Test 2: with 
+a licensed local Realtor vs. Professional Property 
+Assessment], 3. Receive options 
+Split Test 2 
+Credibility Backed by LPT Aperture Holdings. Not an automated 
+estimate. 
+None 
+Testimonial One calm 23 sentence homeowner quote. No photos, 
+no stars. 
+Split Test 3: None vs. 
+one testimonial 
+ 
+Hackathon Approach 
+ Implement Split Tests 2 & 3 via URL param: ?v=A (default) or ?v=B 
+ Grey placeholder rectangle for billboard photo (label Billboard photo TBD) 
+ 
+
+===== PAGE 8 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 8 
+Stage 3 The Evaluation Interstitial PSYCHOLOGICAL TRIGGER 
+Labor illusion + evaluation 
+anxiety 
+ 
+ 
+ Dark terminal (animated):  stage3_animated.html   |   Skeuomorphic terminal: 
+ 
+ 
+ Light variant (animated):  stage3_light.html   |   All Stage 3 variants: 
+
+===== PAGE 9 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 9 
+ 
+Goal 
+Not a loading screen. An evaluation scene proving the system is doing real work. Visual 
+aesthetic: serious, technical organization processing your property right now. 
+UI Specs 
+ Dark background (#0D1117) 
+ Monospaced font (Courier New or JetBrains Mono) 
+ Sequential line rendering with ~400ms delay (typewriter effect) 
+ Green/teal (#39D353) checkmarks; grey for in-progress 
+ PROHIBITED: progress bars, percentage scores, countdown timers, spinners, fabricated 
+metrics 
+Terminal Animation Sequence 
+ 
+> Locating property details for [entered address]... 
+  Querying county assessor records... 
+ Property found. Parcel ID confirmed. 
+> Checking public records... 
+  Cross-referencing ownership and title history... 
+ Ownership and property profile confirmed. 
+> Running market alignment check... 
+  Analyzing current buyer demand in ZIP [XXXXX]... 
+ Initial screening complete  strong alignment with current buying criteria. 
+ 
+  Let's confirm a few details to continue. 
+ 
+Alignment Tiers (final line) 
+ Strong:  ...strong alignment with current buying criteria. 
+ Within:  ...within current buying criteria. 
+ Additional:  ...additional details required to confirm alignment. 
+ 
+Hackathon Approach 
+ Pure CSS/JS typewriter  no API needed 
+ Inject address + ZIP from address_lookup.json 
+ Total animation: ~46 seconds, then auto-advance to Stage 4 
+ Use strong alignment for all demos 
+ 
+Stage 4 Qualification & Property Refinement PSYCHOLOGICAL TRIGGER 
+Validation release (Endowed 
+Progress Effect) 
+ 
+===== PAGE 10 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 10 
+ 
+ Interactive mockup:  stage_mockups.html#stage4 
+ 
+Goal 
+Collect property data using light, tap-based questions. The seller has passed  these feel like 
+formalities. Each tap increases sunk investment. 
+UI Specs 
+ Stepped progress bar appears here first (Step 3 of 5 active) 
+ Mobile tap targets: minimum 48px height, full-width 
+ One question per screen  no back button visible 
+Copy 
+Element Copy 
+Headline Your Property Has Passed Initial Screening. 
+Subline To continue, we need a few quick details about the property. 
+Transition Thank you. Were ready to move forward. 
+Questions 
+# Question Options Flag 
+1 Current condition of the 
+property? 
+Move-in ready / Minor updates / Needs repairs 
+/ Major renovation 
+On 
+2 How soon looking to sell? ASAP / 30 days / 13 months / Just exploring On 
+3 Current occupancy? Owner / Tenant / Vacant On 
+4 Known structural issues? No known / Yes minor / Yes significant OFF (feature flag) 
+ 
+
+===== PAGE 11 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 11 
+Hackathon Approach 
+ Store answers in component state. Ship Q1Q3 only (Q4 is flagged OFF). 
+ 
+Stage 5 Identity Confirmation PSYCHOLOGICAL TRIGGER 
+Micro-commitment escalation 
+ 
+ 
+ Interactive mockup:  stage_mockups.html#stage5 
+ 
+Goal 
+Convert anonymous seller into a verified, contactable lead. By this point theyve invested effort 
+ revealing contact details feels like a natural next step. 
+Specs 
+Element Spec 
+Headline Confirm Your Details to Continue. 
+Fields First Name, Last Name, Email, Mobile Phone (all required) 
+Reassurance Used only to coordinate next steps. No obligation. 
+CTA Confirm My Details 
+TCPA Include placeholder: [TCPA consent language   provided by LPT legal] 
+SMS (Twilio) Built but OFF via feature flag at launch   ship OFF 
+Progress Step 4 of 5 active 
+ 
+Hackathon Approach 
+
+===== PAGE 12 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 12 
+ Basic form validation. On submit: store to state, advance to Stage 6 (no API). 
+ 
+Stage 6 Resource Commitment & Expert Assignment PSYCHOLOGICAL TRIGGER 
+Reciprocity reframe 
+ 
+ 
+ Interactive mockup:  stage_mockups.html#stage6 
+ 
+Goal 
+Formalize the platforms investment. A licensed professional is being assigned to their property. 
+Creates powerful reciprocity obligation. 
+Copy (exact) 
+Element Copy 
+Headline Were Assigning a Property Assessment Expert to Your Property. 
+Subline All Property Assessment Experts are licensed local Realtors. 
+Body Your assigned expert will reach out within 24 hours to schedule a no-cost, in-person 
+Professional Property Assessment. 
+CTA Confirm & Continue 
+Progress Step 5 of 5 active 
+ 
+Hackathon Approach 
+ Static page. Add a ~1 second pulsing dot before content appears to reinforce assignment in 
+progress. 
+ 
+
+===== PAGE 13 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 13 
+Stage 7 Confirmation Page PSYCHOLOGICAL TRIGGER 
+Commitment & consistency 
+ 
+ 
+ Interactive mockup:  stage_mockups.html#stage7 
+ 
+Goal 
+Final digital impression. Reinforce the decision, set expectations, create clean handoff to offline. 
+Content 
+Element Copy / Content 
+Headline Youre All Set. 
+Property 
+summary 
+Show entered address + qualification answers as read-only card 
+Next steps 1. Expert calls/texts within 24 hrs. 2. Schedules no-cost assessment. 3. You receive 
+both cash offer and market listing options. 
+What to expect Assessment takes 2030 minutes. No obligation, no cost. 
+Fallback Questions? Call or text us at [LPT phone placeholder] 
+ 
+PROHIBITED: scheduling widgets, pricing estimates, Zestimate-style numbers, or 
+any offer amounts on this page. 
+ 
+5. The Dual-Path Offer System 
+
+===== PAGE 14 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 14 
+ 
+The dual-path reveal happens during the in-person assessment  not in the digital funnel. Pod 
+1s job is to deliver a committed seller. 
+ 
+ Certainty Path Market Path 
+Value prop Speed + certainty. Firm cash. No repairs 
+or showings. 
+Maximum market value. Licensed LPT 
+Realtor handles transaction. 
+Who for Sellers prioritizing convenience/speed Sellers wanting top dollar 
+When revealed During in-person assessment   NOT in 
+digital funnel 
+During in-person assessment   NOT in 
+digital funnel 
+Pod 1 role Do not price, estimate, or preview in UI Do not price, estimate, or preview in UI 
+ 
+6. Data Sources & Integrations 
+ 
+These integrations are required for production but blocked for the hackathon. Mock JSON files 
+mirror real API shapes. 
+ 
+Integration What It Provides Why Blocked Hackathon Alt 
+Pod 2 API   
+Property 
+Address  parcel, 
+ownership, sqft, year 
+LPT internal credentials address_lookup.json (31 
+addresses) 
+Pod 2 API   
+Comps 
+Comparable sales, 
+buyer demand score 
+LPT backend + latency 
+infra 
+market_comps.json (10 ZIPs) 
+Google Places Address 
+autocomplete 
+Billing + charges risk Styled text input + lookup table 
+Twilio SMS Phone verification OFF via feature flag Ship flag OFF 
+GA4 + Ads Tags Funnel analytics GTM + data warehouse console.log placeholders 
+LPT CRM Lead submission LPT API key required Store to React state + console 
+ 
+7. Mock Data Specification 
+ 
+Two JSON files provided. Place in /src/data/. They mirror Pod 2 API response shapes for post-
+hackathon drop-in swap. 
+ 
+7.1  address_lookup.json 
+31 properties keyed by normalized address. On address entry: lowercase + trim, check for 
+match, inject data into Stage 3. 
+===== PAGE 15 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 15 
+Field Type Mirrors 
+address (key) string normalized_address 
+parcelId string parcel_id 
+zip, city, state string municipality fields 
+beds, baths, sqft, 
+yearBuilt 
+number property_attributes 
+marketDemandScore number (0100) demand_index 
+alignmentTier 'strong'|'within'|'additional' Drives interstitial final line 
+ 
+7.2  market_comps.json 
+10 ZIP code profiles for the interstitials market analysis animation. 
+Field Type Mirrors 
+zip string zip_code 
+medianSalePrice number median_sold_price_90d 
+buyerDemandScore number (0100) demand_index 
+recentComps [] array of {address, soldPrice, 
+soldDate, sqft} 
+comparable_sales 
+ 
+Import directly in React  no fetch() needed. Post-hackathon: replace import 
+with await fetch('/api/pod2/property?address=...')  same shape. 
+ 
+8. Technical Requirements 
+ 
+Requirement Production Target Hackathon Approach 
+Framework Next.js (SSR) for PPC Quality 
+Score 
+Next.js or Vite+React (team choice) 
+LCP < 1.5s on throttled mobile 4G Keep bundle lean, < 150 KB JS 
+FID < 100ms Defer non-critical JS 
+Above-fold weight < 200 KB total No large images above fold 
+A/B Testing Next.js edge middleware URL param (?v=A or ?v=B) 
+Feature Flags Edge middleware Boolean constants in /src/config/flags.js 
+Pod 2 API < 500ms property; < 1,200ms 
+comps 
+setTimeout(400ms) + JSON import 
+Analytics GA4 + Ads + server-side 
+warehouse 
+console.log('EVENT:', stage) 
+ 
+===== PAGE 16 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 16 
+Bootstrap Command 
+# Next.js (production-aligned): 
+npx create-next-app@latest buymyhouse --js --no-tailwind --no-eslint 
+cd buymyhouse && npm install 
+npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p 
+ 
+# OR Vite (fastest): 
+npm create vite@latest buymyhouse -- --template react 
+cd buymyhouse && npm install 
+npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p 
+ 
+9. Design Rules & Visual System 
+ 
+Mode Used On Palette Typography 
+Institutional / Calm Stages 1, 2, 4, 5, 
+6, 7 
+Navy #1B2A4A, Charcoal #222, 
+White, single accent 
+Sans-serif, high contrast, 
+generous whitespace 
+Technical / Precise Stage 3 only Dark #0D1117, Green #39D353, 
+Grey #AAA 
+Monospaced (Courier New 
+/ JetBrains Mono) 
+ 
+Strict Prohibitions 
+  No purple gradients or generic 'AI aesthetic' 
+  No hero images of houses, smiling families, outdoor photos 
+  No Zillow-esque green-and-blue palette 
+  No proptech clichs (illustrated maps, pin icons, neighborhood guides) 
+  No progress bars, percentages, or timers inside Stage 3 
+  No pricing, estimates, or offer amounts anywhere in the funnel 
+  No scheduling widgets on the confirmation page 
+ 
+10. Team Tracks & Time Plan 
+ 
+10.1  Tracks 
+Track Person(s) Owns 
+A   Shell + Stages 
+12 
+Designer + Dev App routing, design tokens, landing page, mobile layout 
+B   Interstitial (Stage 
+3) 
+Dev Terminal animation, address injection, alignment tier, auto-
+advance 
+C   Stages 47 + 
+Data 
+Dev Qualification flow, identity form, expert + confirmation pages, 
+mock data 
+===== PAGE 17 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 17 
+Track Person(s) Owns 
+D   Polish (Hour 3) All Integration, A/B param switching, mobile QA, demo prep 
+ 
+10.2  Hour-by-Hour 
+Phase Time Track A Track B Track C 
+Foundation 0:00
+1:00 
+Scaffold + Stage 1 rendered Interstitial animation wired Data imported + Stage 4 
+rendering 
+Features 1:00
+2:00 
+Stage 2 complete + mobile 
+QA 
+Alignment + auto-advance 
+working 
+Stages 57 + form validation 
+Integration 2:00
+2:40 
+Merge tracks, fix routing Bug fixes + transitions A/B params + data injection 
+Demo 2:40
+3:00 
+Full mobile run-through Record screen demo Optional Vercel deploy 
+ 
+11. AI Prompt Templates 
+ 
+Copy directly into Cursor, Claude, or Copilot. 
+ 
+Stage 1  Address Entry 
+Write a React component called AddressEntry. 
+Design: Institutional/Calm. Navy #1B2A4A, white, charcoal #222. 
+Render: bold headline 'Sell Your House for Cash. No Repairs. No Surprises.' 
+Subheadline: 'Enter your address to check eligibility for a firm cash offer.' 
+Full-width address input with location pin icon (Lucide React). 
+Full-width navy CTA: 'Check My Property' 
+Micro-copy: 'Check eligibility first. No contact details required.' 
+Must fit above fold at 390px. Tailwind only. No hero images. 
+ 
+Stage 3  Terminal Interstitial 
+Write a React component called EvaluationInterstitial. 
+Design: Technical/Precise. Background #0D1117. Font: Courier New. 
+Props: address (string), zip (string), onComplete (callback). 
+Sequentially type out lines with 400ms delay: 
+  '> Locating property details for {address}...' 
+  '  Querying county assessor records...' 
+  'checkmark Property found. Parcel ID confirmed.' (green #39D353) 
+  ... (full sequence in Section 4, Stage 3) 
+After last line, wait 1.5s, call onComplete(). 
+No progress bar. No spinner. No percentage. 
+ 
+===== PAGE 18 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 18 
+Stage 4  Qualification Cards 
+Write a React multi-step form: PropertyQualification. 
+Design: Institutional/Calm. Navy + white. 
+Props: onComplete(answers) callback. 
+One question per screen. 3 questions total. 
+Each option: full-width tap card, 48px min height, navy border. 
+Progress bar: 5 steps, step 3 highlighted. 
+Headline: 'Your Property Has Passed Initial Screening.' 
+Auto-advance on selection (300ms delay). No back button. 
+ 
+12. Demo Script 
+ 
+Use when presenting to LPT stakeholders. Show on a 390px mobile viewport. 
+ 
+8. Stage 1: Open landing page on mobile. Full above-fold, no scroll. Type a sample address 
+from address_lookup.json. 
+9. Stage 2: Scroll down. Show billboard, 3-step, credibility, testimonial (?v=B). These resolve 
+objections before the seller enters their address. 
+10. Stage 3: Hit CTA. Terminal runs. This is not a loading screen  this is an evaluation scene. 
+The seller is now being assessed, not assessing us. 
+11. Stage 4: Tap through 3 qualification questions. Show progress bar + full-width tap cards. 
+12. Stage 5: Fill identity form. Point out TCPA placeholder + reassurance copy. 
+13. Stage 6: Expert assignment. Read headline aloud. This is the reciprocity moment. 
+14. Stage 7: Confirmation. No pricing, no scheduling. Property summary + next steps only. 
+Clean handoff to offline. 
+ 
+Key line: 'All mock data mirrors our Pod 2 API shapes. Post-hackathon it's a 
+one-line swap  import becomes fetch.' 
+ 
+13. Post-Hackathon Roadmap 
+ 
+Priority Item Effort 
+P0 Wire live Pod 2 API (property + comps) 12 weeks 
+P0 Real CRM lead submission on Stage 5 35 days 
+P0 Next.js edge middleware for A/B + feature flags 1 week 
+P1 Google Places API (address autocomplete) 23 days 
+P1 GA4 + Google Ads conversion tags 35 days 
+P1 TCPA consent + Twilio SMS (enable flag) 1 week (legal) 
+P1 LCP performance audit + optimization 1 week 
+===== PAGE 19 =====
+BUYMYHOUSE.COM  Pod 1 Hackathon CONFIDENTIAL  |  LPT Holdings  |  March 2026 
+Internal Use Only Page 19 
+Priority Item Effort 
+P2 Structural Issues question (enable Q4 flag) 1 day 
+P2 Server-side analytics pipeline 23 weeks 
+P3 Dual-path reveal UI (post-assessment) TBD 
+ 
+14. Visual References & Mockups 
+ 
+The following HTML files are in the same folder as this document. Open each in any browser. 
+They are standalone  no server required. 
+ 
+Stage Wireframes 
+  stage_mockups.html    All 7 funnel stages as annotated wireframes. Exact spec colors, 
+copy, and layout. Annotation callouts on every stage explain key implementation decisions. 
+ 
+Stage 3  Animated Terminals 
+Three working interactive prototypes of the Evaluation Interstitial. All auto-play on load and 
+include a Replay button. Devs can copy JS directly into the Next.js page. 
+ 
+  stage3_animated.html    System-Log / Dark Terminal variant. Sequential line disclosure 
+(PageSpeed-style), sub-source expansion (Kayak-style), labor illusion delay (TurboTax-style), 
+master progress bar, typewriter result reveal, countdown auto-advance. Mechanism labels explain 
+each pattern. 
+  stage3_skeuomorphic.html    Premium Hardware variant. Same sequence wrapped in a 
+physical chassis: brushed-metal casing, inset CRT display, phosphor scanlines, LED indicators 
+(PROC amber  READY green on completion), corner accent marks, press-depth action button. 
+  stage3_light.html    Light / Institutional variant. Institutional/Calm palette (navy #1B2B4B, 
+gold #C8A96E, white)  no terminal aesthetics. White card on soft blue-grey background. Micro-
+animations: spring-complete step dots, progress shimmer, leading-edge gold glow, result card 
+scale+lift reveal, staggered stat counters. Best match for mobile UX and A/B test against dark 
+variant. 
+ 
+All four HTML files are self-contained with zero external dependencies. 
+All Stage 3 variants use pure CSS + vanilla JS  no React needed for prototype. 
+Address, alignment tier, and score values are hardcoded for hackathon; swap 
+  to URL params or session state post-hackathon (see Section 7 mock data). 
+stage_mockups.html embeds static snapshots of all Stage 3 variants with live 
+  link buttons to open each interactive demo directly from the mockup doc. 
+ 
+ 
+Based on: BuyMyHouse Pod1 Build Specification.docx + buymyhouse des.pdf (LPT Holdings, Inc.) 
