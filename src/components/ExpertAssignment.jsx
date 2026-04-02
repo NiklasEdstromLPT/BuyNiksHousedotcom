@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import ProgressBar from './ProgressBar';
 
 export default function ExpertAssignment({ onContinue, property }) {
   const [loading, setLoading] = useState(true);
@@ -12,9 +11,7 @@ export default function ExpertAssignment({ onContinue, property }) {
   const city = property?.city || 'your area';
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      <ProgressBar currentStep={5} totalSteps={5} />
-
+    <div className="min-h-screen bg-white flex flex-col items-center">
       <div className="flex-1 flex flex-col justify-center items-center px-6 py-10 text-center">
         {loading ? (
           <div className="flex items-center gap-3">

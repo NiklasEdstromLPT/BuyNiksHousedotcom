@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ProgressBar from './ProgressBar';
 
 function validate(identity) {
   const errors = {};
@@ -47,9 +46,7 @@ export default function IdentityForm({ onSubmit, property, qualification }) {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      <ProgressBar currentStep={4} totalSteps={5} />
-
+    <div className="min-h-screen bg-white flex flex-col items-center">
       <div className="flex-1 flex flex-col md:flex-row px-6 md:px-12 py-10 gap-10 max-w-5xl mx-auto w-full">
         {/* Left Column — Reinforcement + Summary */}
         <div className="flex-1">

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { FLAGS } from '../config/flags';
-import ProgressBar from './ProgressBar';
 
 const QUESTIONS = [
   {
@@ -77,9 +76,7 @@ export default function PropertyQualification({ onComplete }) {
   if (!question) return null;
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
-      <ProgressBar currentStep={3} totalSteps={5} />
-
+    <div className="min-h-screen bg-white flex flex-col items-center">
       <div className="flex-1 flex flex-col justify-center px-6 md:px-12 py-10">
         <div className="w-full max-w-xl mx-auto">
           {/* Question */}

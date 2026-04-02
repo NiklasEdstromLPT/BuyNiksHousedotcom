@@ -11,8 +11,8 @@ export default function TrustLayer({ variant = 'A', onScrollToCTA }) {
 
       {/* How It Works */}
       <div className="px-6 md:px-12 py-10">
-        <p className="text-[11px] tracking-[3px] uppercase text-gold mb-3">Process</p>
-        <h2 className="text-2xl font-bold text-navy mb-7">How It Works</h2>
+        <p className="text-[11px] tracking-[3px] uppercase text-gold mb-3 text-center">Process</p>
+        <h2 className="text-2xl font-bold text-navy mb-7 text-center">How It Works</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <Step number={1} title="Enter Your Address" desc="Takes 60 seconds. We pull live market data for your property." />
           <Step
@@ -52,16 +52,18 @@ export default function TrustLayer({ variant = 'A', onScrollToCTA }) {
       </div>
 
       {/* Sticky CTA Bar */}
-      <div className="bg-navy px-6 md:px-12 py-7 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-lg font-bold text-white text-center md:text-left">
-          Ready to see what your home is worth?
-        </p>
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="bg-gold text-navy px-7 py-3.5 rounded-md font-bold text-sm hover:brightness-110 transition-all cursor-pointer"
-        >
-          Get My Assessment →
-        </button>
+      <div className="bg-navy px-6 md:px-12 py-7">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
+          <p className="text-lg font-bold text-white text-center md:text-left">
+            Ready to see what your home is worth?
+          </p>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="bg-gold text-navy px-7 py-3.5 rounded-md font-bold text-sm hover:brightness-110 transition-all cursor-pointer"
+          >
+            Get My Assessment →
+          </button>
+        </div>
       </div>
     </section>
   );

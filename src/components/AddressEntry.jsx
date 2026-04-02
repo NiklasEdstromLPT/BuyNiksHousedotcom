@@ -110,7 +110,7 @@ export default function AddressEntry({ onSubmit }) {
             className="w-full max-w-[560px] mt-4 relative"
             ref={wrapperRef}
           >
-            <div className="flex rounded-md overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
+            <div className="flex flex-col sm:flex-row rounded-md overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
               <input
                 type="text"
                 value={address}
@@ -123,9 +123,11 @@ export default function AddressEntry({ onSubmit }) {
               />
               <button
                 type="submit"
-                className="bg-gold text-navy font-bold text-sm tracking-wide px-7 py-4.5 whitespace-nowrap hover:brightness-110 transition-all cursor-pointer"
+                className="bg-gold text-navy font-bold text-sm tracking-wide px-4 md:px-7 py-4.5 whitespace-nowrap hover:brightness-110 transition-all cursor-pointer"
               >
-                Check My Property →
+                <span className="hidden sm:inline md:hidden">Check →</span>
+                <span className="sm:hidden">Check My Property →</span>
+                <span className="hidden md:inline">Check My Property →</span>
               </button>
             </div>
 
